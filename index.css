@@ -1,0 +1,226 @@
+:root {
+    --clr-white-100: hsl(0, 0%, 100%);
+    --clr-white-200: hsl(0, 0%, 90%);
+    --clr-light-pink-100: hsl(275, 100%, 97%);
+    --clr-gray-purple-400: hsl(292, 16%, 49%);
+    --color-dark-purple: hsl(292, 42%, 14%);
+
+    --fw-reg: 400;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    --ff-base: 'Work Sans', sans-serif;
+
+    --ratio: 1.5;
+    --s-2: calc(var(--s-1) / var(--ratio));
+    --s-1: calc(var(--s0) / var(--ratio));
+    --s0: .75rem;
+    --s1: calc(var(--s0) * var(--ratio));
+    --s2: calc(var(--s1) * var(--ratio));
+    --s3: calc(var(--s2) * var(--ratio));
+    --s4: calc(var(--s3) * var(--ratio));
+}
+
+[hidden] { display: none; }
+
+/*
+    1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+*/
+* {
+    margin: 0;
+}
+/*
+    5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+    font: inherit;
+}
+/*
+    7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+figcaption {
+  max-inline-size: 60ch;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+
+    font-family: var(--ff-base);
+    background-image: url("assets/images/background-pattern-mobile.svg");
+    background-repeat:no-repeat;
+    background-position: center top;
+    background-color: var(--clr-light-pink-100);
+}
+
+@media screen and (min-width: 320px) {
+    body {
+        background-image: url("assets/images/background-pattern-desktop.svg");
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    body {
+        background-image: url("assets/images/background-pattern-desktop.svg");
+        background-attachment: fixed;
+        background-size: contain;
+    }
+}
+
+h1 {
+    font-weight: var(--fw-bold);
+    font-size: var(--s4)
+}
+
+h2 {
+    font-size: var(--s1);
+    font-weight: var(--fw-semibold);
+}
+
+p {
+    font-size: var(--s1);
+    font-weight: var(--fw-reg);
+    color: var(--clr-gray-purple-400);
+}
+
+button {
+    background: none;
+    width: 100%;
+	color: inherit;
+	border: none;
+	padding: 0;
+	outline: inherit;
+    text-align: left;
+}
+
+/* Center Content */
+.container {
+    box-sizing: content-box;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+
+/* Card */
+.card {
+    /* Create Card */
+    max-width: 580px;
+    background-color: var( --clr-white-100);
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    padding: 1.5rem;
+    margin-inline: 1rem;
+
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+/* .card-header {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 1em;
+} */
+
+/* .card-header > img {
+    width: 0.75em;
+    width: 1cap;
+    height: 0.75em;
+    height: 1cap;
+} */
+
+.icon {
+    width: 0.75em;
+    width: 1cap;
+    height: 0.75em;
+    height: 1cap;
+}
+
+.with-icon {
+    display: inline-flex;
+    align-items: baseline;
+}
+
+.with-icon .icon {
+    margin-inline-end: .5rem;
+}
+
+[class^='stack'], [class*='stack'] {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+[class^='stack'], [class*=' stack'] > * {
+    margin-block: 0;
+} 
+
+.stack-faqs > * + *  {
+    margin-block-start: 1.5rem;
+}
+.stack-faq > * + * {
+    margin-block-start: 1rem;
+}
+
+.stack-faqs > :not(:last-child) {
+    padding-block-end: 1.5rem;
+    border-bottom: solid 1px rgb(240, 240, 240);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+button:hover{
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+button:focus
+,button:active {
+    outline: 1px solid;
+}
+
+.faq-answer {
+    transition: opacity 2s ease-in-out;
+}
+
+.icon-expand {
+    width: 1.75em;
+    width: 3cap;
+    height: 1.75em;
+    height: 3cap;
+}
+button > svg {
+    width: 1.5em;
+    height: 1.5em;
+}
+
