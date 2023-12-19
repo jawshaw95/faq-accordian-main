@@ -64,7 +64,7 @@ h5,
 h6,
 li,
 figcaption {
-  max-inline-size: 60ch;
+    max-inline-size: 60ch;
 }
 
 body {
@@ -141,19 +141,6 @@ button {
     flex-direction: column;
 }
 
-/* .card-header {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 1em;
-} */
-
-/* .card-header > img {
-    width: 0.75em;
-    width: 1cap;
-    height: 0.75em;
-    height: 1cap;
-} */
-
 .icon {
     width: 0.75em;
     width: 1cap;
@@ -199,28 +186,29 @@ button {
     gap: 2rem;
 }
 
-button:hover{
-    cursor: pointer;
-    transform: translateY(-2px);
-}
-
-button:focus
-,button:active {
-    outline: 1px solid;
-}
-
-.faq-answer {
-    transition: opacity 2s ease-in-out;
-}
-
-.icon-expand {
+.faq-question > svg {
     width: 1.75em;
     width: 3cap;
     height: 1.75em;
     height: 3cap;
+    flex-shrink: 0;
 }
+
+button:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+button:focus-visible,
+button:active {
+    outline: 1px solid;
+}
+
 button > svg {
     width: 1.5em;
     height: 1.5em;
 }
 
+.attribution {
+    margin-inline: 1rem;
+}

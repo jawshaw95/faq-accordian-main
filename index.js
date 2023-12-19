@@ -1,6 +1,5 @@
 const faqs = document.querySelector(".stack-faqs");
 
-
 faqs.addEventListener('click', (e) => {
     const activeFAQ = e.target.closest(".stack-faq")
     if(!activeFAQ) return
@@ -10,7 +9,7 @@ faqs.addEventListener('click', (e) => {
 function toggleFAQ(faq) {
     const button = faq.querySelector("button");
     const answer = faq.querySelector(".faq-answer")
-    const faqIcon = faq.querySelector(".icon-expand").children[0]
+    const faqIcon = faq.querySelector("#icon").children[0]
 
     if(button.getAttribute('aria-expanded').localeCompare('true') === 0) {
         button.setAttribute('aria-expanded', false)
